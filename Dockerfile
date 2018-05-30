@@ -51,4 +51,6 @@ RUN apt-get update && apt-get install -y \
 #  && dpkg -i node.deb \
 #  && rm node.deb
 
-USER CI_USER
+# Use non-root user
+RUN useradd ci_user
+USER ci_user
